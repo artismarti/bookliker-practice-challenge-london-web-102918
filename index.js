@@ -17,7 +17,7 @@ function renderBooks(books) {
     bookTitle.id = book.id
     bookTitle.innerText = book.title
     booksList.appendChild(bookTitle)
-    bookTitle.addEventListener('click', () => fetchBookDetails(book.id))
+    bookTitle.addEventListener('mouseover', () => fetchBookDetails(book.id))
   })
 }
 
@@ -44,6 +44,7 @@ function likeBook(bookLikers, id) {
   isAlreadyLiked.length > 0 ? isAlreadyLiked = true : isAlreadyLiked = false
   if (isAlreadyLiked) {
     showPanel.querySelector("button").disabled = true
+    alert(`You've already liked this!`)
   } else {
     bookLikers.push(addOwnLike)
 
